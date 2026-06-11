@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrimePhones — Mobile Phones for Everyone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">PrimePhones</h1>
+      <nav class="main-nav">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <h2>Find Your Perfect Phone</h2>
+          <p>Latest models, great prices, and fast delivery — shop with confidence.</p>
+          <a class="btn" href="#products">Browse Phones</a>
+        </div>
+        <img class="hero-image" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80" alt="Phones banner" />
+      </div>
+    </section>
+
+    <section id="products" class="container products">
+      <h3>Featured Phones</h3>
+      <div class="product-grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=60" alt="Vivid X1" />
+          <h4>Vivid X1</h4>
+          <p class="price">$499</p>
+          <ul class="specs">
+            <li>6.5" OLED</li>
+            <li>128GB</li>
+            <li>48MP Camera</li>
+          </ul>
+          <button class="btn buy" data-product="Vivid X1">Buy Now</button>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1510557880182-3d4d3b3e4f3b?auto=format&fit=crop&w=800&q=60" alt="Edge Pro 5G" />
+          <h4>Edge Pro 5G</h4>
+          <p class="price">$699</p>
+          <ul class="specs">
+            <li>6.7" AMOLED</li>
+            <li>256GB</li>
+            <li>64MP Camera</li>
+          </ul>
+          <button class="btn buy" data-product="Edge Pro 5G">Buy Now</button>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=60" alt="Core Mini" />
+          <h4>Core Mini</h4>
+          <p class="price">$299</p>
+          <ul class="specs">
+            <li>5.8" LCD</li>
+            <li>64GB</li>
+            <li>12MP Camera</li>
+          </ul>
+          <button class="btn buy" data-product="Core Mini">Buy Now</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About PrimePhones</h3>
+      <p>PrimePhones is a family-owned retailer focused on delivering quality mobile phones at competitive prices. We carefully curate our selection and provide clear, honest product details.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact Us</h3>
+      <form id="contactForm">
+        <label>Full name<input type="text" name="name" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Message<textarea name="message" rows="4" required></textarea></label>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 PrimePhones — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

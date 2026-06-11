@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BlueBag Boutique — Stylish Bags for Every Day</title>
+  <link rel="stylesheet" href="bags.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="badge">BlueBag</span>
+        <h1>BlueBag Boutique</h1>
+      </div>
+      <nav class="main-nav">
+        <a href="#products">Products</a>
+        <a href="#specials">Specials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Premium Carry</p>
+          <h2>Elevate your look with bold, blue accessories.</h2>
+          <p>Discover handcrafted bags designed for style, comfort, and everyday adventure.</p>
+          <a class="btn btn-primary" href="#products">Shop the collection</a>
+        </div>
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a19?auto=format&fit=crop&w=900&q=80" alt="Blue bag on table" />
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="container products">
+      <div class="section-header">
+        <span class="section-label">Featured Bags</span>
+        <h3>Our bestsellers with unbeatable style.</h3>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1520975926009-0c4034d9909b?auto=format&fit=crop&w=700&q=80" alt="Sky Tote" />
+          <div class="product-copy">
+            <h4>Sky Tote</h4>
+            <p class="product-price">$89</p>
+            <ul>
+              <li>Water-resistant canvas</li>
+              <li>Spacious interior</li>
+              <li>Modern sky-blue hue</li>
+            </ul>
+            <button class="btn add-to-cart" data-product="Sky Tote">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1515548213430-4267f2b4c0a1?auto=format&fit=crop&w=700&q=80" alt="Navy Sling" />
+          <div class="product-copy">
+            <h4>Navy Sling</h4>
+            <p class="product-price">$69</p>
+            <ul>
+              <li>Adjustable crossbody strap</li>
+              <li>Secure zip compartments</li>
+              <li>Urban minimalist design</li>
+            </ul>
+            <button class="btn add-to-cart" data-product="Navy Sling">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1542293787938-c9e299b8809f?auto=format&fit=crop&w=700&q=80" alt="Ocean Backpack" />
+          <div class="product-copy">
+            <h4>Ocean Backpack</h4>
+            <p class="product-price">$99</p>
+            <ul>
+              <li>Padded laptop sleeve</li>
+              <li>Durable vegan leather</li>
+              <li>Everyday traveler essential</li>
+            </ul>
+            <button class="btn add-to-cart" data-product="Ocean Backpack">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="specials" class="container specials">
+      <div class="special-panel">
+        <h3>Limited Edition</h3>
+        <p>Claim our exclusive midnight blue carryall before it sells out.</p>
+        <div class="special-details">
+          <span class="special-price">$129</span>
+          <button class="btn btn-secondary">View Offer</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Stay in Touch</h3>
+      <p>Have a question? Send us a message and our style team will reply fast.</p>
+      <form id="bagContactForm">
+        <label>
+          Full Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="Tell us what you need" required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 BlueBag Boutique</p>
+      <p>Designed for fashion-forward travelers.</p>
+    </div>
+  </footer>
+
+  <script src="bags.js"></script>
+</body>
+</html>

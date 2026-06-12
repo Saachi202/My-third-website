@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueAura Jewelry</title>
+  <style>
+    :root {
+      --bg: #071f3a;
+      --surface: #0f2f55;
+      --accent: #60a5ff;
+      --text: #f4f7ff;
+      --muted: #a9c5ff;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, rgba(96, 165, 255, 0.18), transparent 35%),
+                  linear-gradient(180deg, #071f3a 0%, #041423 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: grid;
+      gap: 10px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      padding: 48px 0;
+    }
+
+    .hero-text h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.05;
+    }
+
+    .hero-text p {
+      margin: 24px 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #071f3a;
+    }
+
+    .button-secondary {
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      display: grid;
+      gap: 16px;
+      justify-items: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .section-title h3 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(16, 46, 84, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(96, 165, 255, 0.45);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h4 {
+      margin: 0 0 12px;
+      font-size: 1.25rem;
+    }
+
+    .card-body p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #d1e8ff;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 6px 12px;
+      background: rgba(96, 165, 255, 0.14);
+      border-radius: 999px;
+      color: #b3d4ff;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .stat h4 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 22px;
+      object-fit: cover;
+      min-height: 200px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0 12px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand h1 {
+        font-size: 1.6rem;
+      }
+
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <h1>BlueAura Jewelry</h1>
+        <p>Crafted elegance, timeless luxury, and premium gemstone artistry.</p>
+      </div>
+      <nav>
+        <a href="#products">Collections</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Exclusive jewelry for every milestone.</h2>
+        <p>Discover our curated collection of handcrafted rings, necklaces, and bracelets designed with deep blue gemstones, bright diamonds, and elegant finishes.</p>
+        <div class="button-group">
+          <a class="button button-primary" href="#products">Shop Collection</a>
+          <a class="button button-secondary" href="#gallery">View Gallery</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1000&q=80" alt="Elegant jewelry presentation" />
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="section-title">
+        <div>
+          <h3>Best Sellers</h3>
+          <p>Handpicked premium pieces with price details so you can choose the perfect gift or personal treasure.</p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1506086679528-5afe25936d42?auto=format&fit=crop&w=1000&q=80" alt="Sapphire ring" />
+          <div class="card-body">
+            <span class="tag">Sapphire Collection</span>
+            <h4>Midnight Sapphire Ring</h4>
+            <p>18K white gold band with a brilliant blue sapphire and diamond halo. Ideal for engagements and special occasions.</p>
+            <div class="price">$1,650</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1587918729209-cd338a0022d3?auto=format&fit=crop&w=1000&q=80" alt="Gold necklace" />
+          <div class="card-body">
+            <span class="tag">Signature Drop</span>
+            <h4>Starlight Pearl Necklace</h4>
+            <p>Delicate 14K rose gold chain accented with freshwater pearls and blue topaz drops for a luminous evening style.</p>
+            <div class="price">$980</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1452919530476-0aa28d43ec36?auto=format&fit=crop&w=1000&q=80" alt="Luxury bracelet" />
+          <div class="card-body">
+            <span class="tag">Luxury Bracelet</span>
+            <h4>Luna Cuff Bracelet</h4>
+            <p>Sleek sterling silver cuff with iridescent sapphires and a satin finish for polished everyday wear.</p>
+            <div class="price">$740</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1532940578127-5bca3a6d8926?auto=format&fit=crop&w=1000&q=80" alt="Fine earrings" />
+          <div class="card-body">
+            <span class="tag">Exclusive Drop</span>
+            <h4>Celestial Diamond Studs</h4>
+            <p>Round-cut diamonds set in platinum for a refined sparkle that complements both day and night looks.</p>
+            <div class="price">$1,250</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-title">
+        <h3>Why BlueAura</h3>
+        <p>We combine modern design, expert craftsmanship, and ethical sourcing to create signature jewelry with a refined blue theme.</p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <h4>250+</h4>
+          <p>handcrafted pieces sold</p>
+        </div>
+        <div class="stat">
+          <h4>95%</h4>
+          <p>customer satisfaction</p>
+        </div>
+        <div class="stat">
+          <h4>50%</h4>
+          <p>recycled metals used</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-title">
+        <h3>Gallery</h3>
+        <p>Elegant visuals from our latest collection featuring gemstone details and polished designs.</p>
+      </div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Jewelry close-up" />
+        <img src="https://images.unsplash.com/photo-1505773278895-7b573b9bfd83?auto=format&fit=crop&w=900&q=80" alt="Jewelry styling" />
+        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=900&q=80" alt="Jewelry gift" />
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=900&q=80" alt="Luxury jewelry" />
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div>
+        <h4>BlueAura Jewelry</h4>
+        <p>Visit our boutique or contact us to customize your next heirloom piece.</p>
+      </div>
+      <div>
+        <p>Email: hello@blueaurajewelry.com</p>
+        <p>Phone: +1 (555) 987-6543</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
